@@ -19,16 +19,24 @@
 };
 
 / {
-    /* マウス移動用のプロセッサ定義 */
+    /* マウス移動用のプロセッサ定義（XY -> マウス用スケーラ） */
     zip_xy_to_mouse_mapper: zip_xy_to_mouse_mapper {
-        compatible = "zmk,input-processor-xy-to-mouse-tp";
-        #input-processor-cells = <0>;
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        /* 相対移動 (X/Y) を出すスケーラ設定 */
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+        track-remainders;
     };
 
-    /* スクロール用のプロセッサ定義 */
+    /* スクロール用のプロセッサ定義（XY -> スクロール用スケーラ） */
     zip_xy_to_scroll_mapper: zip_xy_to_scroll_mapper {
-        compatible = "zmk,input-processor-xy-to-scroll-mapper";
-        #input-processor-cells = <0>;
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        /* スクロールホイール出力 (vertical / horizontal) */
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+        track-remainders;
     };
 
     anin0: analog_input_0 {
