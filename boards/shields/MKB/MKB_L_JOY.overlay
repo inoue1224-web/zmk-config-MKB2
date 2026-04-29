@@ -18,6 +18,17 @@
     triggers-per-rotation = <1>;
 };
 
+/* 追加：マウス移動とスクロールのためのプロセッサ定義 */
+&zip_xy_to_mouse_mapper {
+    compatible = "zmk,input-processor-xy-to-mouse-tp";
+    #input-processor-cells = <0>;
+};
+
+&zip_xy_to_scroll_mapper {
+    compatible = "zmk,input-processor-xy-to-scroll-mapper";
+    #input-processor-cells = <0>;
+};
+
 / {
     anin0: analog_input_0 {
         compatible = "zmk,analog-input";
