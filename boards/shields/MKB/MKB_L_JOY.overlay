@@ -57,7 +57,7 @@
         };
         layer1 {
             layers = <1>;
-            input-processors = <&mouse_runtime_input_processor>;
+            input-processors = <&zip_xy_to_mouse_mapper &mouse_runtime_input_processor>;
         };
     };
 };
