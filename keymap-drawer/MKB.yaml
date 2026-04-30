@@ -42,19 +42,19 @@ layers:
   - LALT
   - {t: SPACE, h: Scr}
   - {t: SPACE, h: Fnc}
-  - {t: SPACE, h: Fnc}
+  - {t: ENTER, h: Fnc}
   - {t: ENTER, h: Num}
   - LEFT
   - DOWN
   - RIGHT
   - LEFT
   - UP
-  - SPACE
+  - '&mkp MB1'
   - DOWN
   - RIGHT
   - HOME
   - PG UP
-  - ENTER
+  - '&mkp MB3'
   - PG DN
   - END
   - A
