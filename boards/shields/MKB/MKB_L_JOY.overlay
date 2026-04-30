@@ -58,7 +58,8 @@
 */
         layer1 {
             layers = <1>;
-            input-processors = <&mouse_runtime_input_processor &zip_report_device_keys>;
+            input-processors = <&zip_xy_scaler 1 1>;
+             /*input-processors = <&mouse_runtime_input_processor>;*/
         };
     };
 };
