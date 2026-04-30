@@ -51,13 +51,14 @@
         compatible = "zmk,input-listener";
         device = <&anin0>;
         
-        layer0 {
+       /* layer0 {
             layers = <0>;
             input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor &mouse_runtime_input_processor>;
         };
+*/
         layer1 {
             layers = <1>;
-            input-processors = <&mouse_runtime_input_processor>;
+            input-processors = <&mouse_runtime_input_processor &zip_report_device_keys>;
         };
     };
 };
