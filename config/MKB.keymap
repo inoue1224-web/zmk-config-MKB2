@@ -96,7 +96,7 @@
 &lt BT ESC    &kp A     &kp S     &kp D     &kp F        &kp G               &kp H           &kp J          &kp K      &kp L     &kp MINUS  &lt MOUSE DEL
 &kp LSHFT     &kp Z     &kp X     &kp C     &kp V        &kp B               &kp N           &kp M          &kp COMMA  &kp DOT   &kp UP     &kp FSLH
 &mt LCTL ESC  &kp LGUI  &kp LALT            &lt 4 SPACE  &lt FUNC SPACE      &lt FUNC ENTER  &lt NUM ENTER             &kp LEFT  &kp DOWN   &kp RIGHT
-&kp LEFT      &kp UP    &mkp MB1  &kp DOWN  &kp RIGHT                                        &kp HOME       &kp PG_UP  &mkp MB3  &kp PG_DN  &kp END
+&kp LEFT      &kp UP    &mkp MB1  &kp DOWN  &kp RIGHT                                        &kp HOME       &kp PG_UP  &mkp MB2  &kp PG_DN  &kp END
                                   &kp A                                                                     &kp B
             >;
 
