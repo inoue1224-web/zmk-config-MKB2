@@ -5,7 +5,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <behaviors.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 #define JP_DQUOTE       AT                // "
@@ -77,12 +76,13 @@
     };
 
     behaviors {
-           encoder_msc_down_up: encoder_msc_down_up {
-           compatible = "zmk,behavior-sensor-rotate";
-           label = "ENCODER_MSC_DOWN_UP";
-           #sensor-binding-cells = <0>;
-           bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-           tap-ms = <20>;
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tap-ms = <20>;
         };
     };
 
@@ -92,15 +92,18 @@
         default_layer {
             label = "Def";
             bindings = <
-&kp TAB       &kp Q     &kp W      &kp E     &kp R          &kp T               &kp Y           &kp U          &kp I      &kp O      &kp P      &kp BKSP
-&lt BT ESC    &kp A     &kp S      &kp D     &kp F          &kp G               &kp H           &kp J          &kp K      &kp L      &kp SEMI   &lt MOUSE SQT
-&kp LSHFT     &kp Z     &kp X      &kp C     &kp V          &kp B               &kp N           &kp M          &kp COMMA  &kp DOT    &kp UP     &kp FSLH
-&mt LCTL ESC  &kp LGUI  &kp LALT             &lt NUM SPACE  &lt FUNC SPACE      &lt FUNC SPACE  &lt NUM ENTER  &kp LEFT   &kp DOWN   &kp RIGHT
-&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                                   &kp A                                                                       &kp B
+&kp TAB       &kp Q     &kp W      &kp E     &kp R        &kp T               &kp Y           &kp U          &kp I      &kp O      &kp P      &kp BKSP
+&lt BT ESC    &kp A     &kp S      &kp D     &kp F        &kp G               &kp H           &kp J          &kp K      &kp L      &kp MINUS  &lt MOUSE DEL
+&kp LSHFT     &kp Z     &kp X      &kp C     &kp V        &kp B               &kp N           &kp M          &kp COMMA  &kp DOT    &kp UP     &kp FSLH
+&mt LCTL ESC  &kp LGUI  &kp LALT             &lt 4 SPACE  &lt FUNC SPACE      &lt FUNC SPACE  &lt NUM ENTER             &kp LEFT   &kp DOWN   &kp RIGHT
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                        &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                     &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &encoder_msc_down_up>;
+            sensor-bindings =
+                <&encoder_msc_down_up>,
+                <&inc_dec_kp PG_UP PG_DN>,
+                <&encoder_msc_down_up>;
         };
 
         function_layer {
@@ -120,15 +123,17 @@
         num_layer {
             label = "Num";
             bindings = <
-&kp CAPS         &kp N1         &kp N2     &kp N3    &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0          &trans
-&trans           &trans         &trans     &trans    &trans     &trans         &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp BSLH        &kp JP_BACKQUOTE
-&mt LSHFT SPACE  &kp BACKSPACE  &kp DEL    &trans    &trans     &trans         &kp JP_YEN     &kp FSLH   &kp SEMI   &kp SQT    &kp JP_PIPE  &kp JP_UNDERSCORE
-&trans           &kp ENTER      &kp ENTER            &kp ENTER  &kp ENTER      &kp ENTER  &kp ENTER             &trans     &trans          &trans
-&kp LEFT         &kp UP         &kp SPACE  &kp DOWN  &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN       &kp END
-                                           &kp A                                                     &kp B
+&kp CAPS         &kp N1         &kp N2     &kp N3    &kp N4     &kp N5         &kp N6      &kp N7     &kp N8     &kp N9     &kp N0       &trans
+&trans           &trans         &trans     &trans    &trans     &trans         &kp MINUS   &kp EQUAL  &kp LBKT   &kp RBKT   &kp BSLH     &kp JP_BACKQUOTE
+&mt LSHFT SPACE  &kp BACKSPACE  &kp DEL    &trans    &trans     &trans         &kp JP_YEN  &kp FSLH   &kp SEMI   &kp SQT    &kp JP_PIPE  &kp JP_UNDERSCORE
+&trans           &kp ENTER      &kp ENTER            &kp ENTER  &kp ENTER      &kp ENTER   &kp ENTER             &trans     &trans       &trans
+&kp LEFT         &kp UP         &kp SPACE  &kp DOWN  &kp RIGHT                             &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN    &kp END
+                                           &kp A                                                      &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&inc_dec_kp PG_UP PG_UP>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
 
         mouse_layer {
@@ -156,7 +161,7 @@
                              &kp A                                              &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&encoder_msc_down_up>, <&inc_dec_kp PG_UP PG_DN>;
         };
 
         bt_layer {
