@@ -23,8 +23,8 @@ layers:
   - J
   - K
   - L
-  - SEMI
-  - {t: SQT, h: Mouse}
+  - MINUS
+  - {t: DEL, h: Mouse}
   - LSHFT
   - Z
   - X
@@ -40,7 +40,7 @@ layers:
   - {t: ESC, h: LCTL}
   - LGUI
   - LALT
-  - {t: SPACE, h: Num}
+  - {t: SPACE, h: Scr}
   - {t: SPACE, h: Fnc}
   - {t: SPACE, h: Fnc}
   - {t: ENTER, h: Num}
@@ -158,10 +158,10 @@ layers:
   - {t: ▽, type: trans}
   - ENTER
   - ENTER
+  - ENTER
+  - ENTER
+  - ENTER
   - {t: ENTER, type: held}
-  - ENTER
-  - ENTER
-  - ENTER
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -276,7 +276,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
