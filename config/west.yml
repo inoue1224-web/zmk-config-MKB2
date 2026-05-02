@@ -16,6 +16,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: prospector
+      url-base: https://github.com/t-ogura
   projects:
     - name: zmk
       # remote: zmkfirmware
