@@ -47,16 +47,16 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - LEFT
-  - UP
   - '&mkp MB1'
+  - '&mkp MB3'
+  - PAGE UP
   - DOWN
-  - RIGHT
-  - HOME
-  - PG UP
   - '&mkp MB2'
-  - PG DN
-  - END
+  - LEFT
+  - UP ARROW
+  - PAGE DOWN
+  - DOWN ARROW
+  - RIGHT
   - A
   - B
   Fnc:
